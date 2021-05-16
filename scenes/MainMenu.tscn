@@ -84,4 +84,6 @@ margin_bottom = 414.0
 custom_fonts/font = ExtResource( 3 )
 text = " Quit game "
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/CreditButton" to="." method="_on_CreditButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

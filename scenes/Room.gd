@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -16,16 +16,11 @@ func _ready():
 #	pass
 
 
-func _on_CreditButton_pressed():
-	get_tree().change_scene("res://scenes/Credits.tscn")
+func _on_Phone_pressed():
+	get_tree().change_scene("res://scenes/Phone.tscn")
 	pass # Replace with function body.
 
 
-func _on_QuitGameButton_pressed():
-	get_tree().quit()
-	pass # Replace with function body.
-
-
-func _on_PlayButton_pressed():
-	get_tree().change_scene("res://scenes/Room.tscn")
+func _on_Computer_pressed():
+	get_tree().change_scene("res://scenes/Computer.tscn")
 	pass # Replace with function body.
