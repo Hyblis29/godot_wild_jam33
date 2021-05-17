@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 
 # Variables
@@ -6,19 +6,15 @@ export var speed = 400
 var screen_size
 
 
-# Signals
-signal hit
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hide()
+	#hide()
 	screen_size = get_viewport_rect().size
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	# Player's movement
 	var velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
@@ -36,7 +32,8 @@ func _process(delta):
 		$AnimatedSprite.stop()
 	
 	# Clamping 
-	position += velocity * delta
+	#position += velocity * delta
+	move_and_slide(velocity, Vector2(1, -1))
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	
@@ -56,12 +53,3 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 	pass
-
-
-func _on_Player_body_entered(body):
-	#hide()  # Player disappears after being hit.
-	emit_signal("hit")
-	print("outch")
-	# Safely disable collision shape
-	#$CollisionShape2D.set_deferred("disabled", true)
-	pass  # Replace with function body.

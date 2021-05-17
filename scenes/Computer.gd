@@ -1,7 +1,7 @@
 extends Node2D
 
 
-export (PackedScene) var Mob
+export (PackedScene) var MobPath
 export (PackedScene) var Obstacle
 export (PackedScene) var Goal
 
@@ -13,13 +13,27 @@ var datas = [
 		"mobs" : [
 			[
 				Vector2(600, 600),
-				Vector2(700, 700)
+				Vector2(700, 700),
+				Vector2(800, 600),
+				Vector2(600, 600)
+			],
+			[
+				Vector2(500, 200),
+				Vector2(500, 300),
+				Vector2(700, 700),
+				Vector2(600, 600),
+				Vector2(800, 600),
+				Vector2(500, 200)
 			]
 		],
 		"obstacles" : [
 			{
 				"pos" : Vector2(300, 300),
 				"scale" : Vector2(3, 2)
+			},
+						{
+				"pos" : Vector2(900, 400),
+				"scale" : Vector2(1, 5)
 			}
 		],
 		"goals" : [
@@ -53,8 +67,8 @@ func start(level):
 	
 	# Mobs initialization
 	for mob_datas in datas[level]["mobs"]:
-		var mob = Mob.instance()
-		mob.init(mob_datas[0])
+		var mob = MobPath.instance()
+		mob.init(mob_datas)
 		add_child(mob)
 		
 	# Obstacles initialization

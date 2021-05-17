@@ -34,7 +34,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 31.9836, 32.0083 )
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -46,5 +46,3 @@ frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
-
-[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
