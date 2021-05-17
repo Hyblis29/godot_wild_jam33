@@ -74,7 +74,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Mob"]
 frames = SubResource( 10 )
-frame = 7
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Mob"]

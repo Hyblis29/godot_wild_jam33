@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/MobPath.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/Baron70.tres" type="DynamicFont" id=7]
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
@@ -26,5 +27,66 @@ texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 973.0
+margin_top = 2.0
+margin_right = 1362.0
+margin_bottom = 766.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 389.0
+margin_bottom = 764.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 84.0
+margin_bottom = 764.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+margin_left = 10.0
+margin_top = 350.0
+margin_right = 74.0
+margin_bottom = 414.0
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 88.0
+margin_right = 389.0
+margin_bottom = 764.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 195.0
+margin_right = 301.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 7 )
+text = " Play"
+align = 0
+
+[node name="CreditButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 301.0
+margin_bottom = 437.0
+custom_fonts/font = ExtResource( 7 )
+text = " Credits"
+align = 0
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 457.0
+margin_right = 301.0
+margin_bottom = 568.0
+custom_fonts/font = ExtResource( 7 )
+text = " Quit game "
 
 [connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]

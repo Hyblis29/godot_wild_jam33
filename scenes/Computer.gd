@@ -46,13 +46,40 @@ var datas = [
 				]
 			}
 		]
+	},
+	{ 
+		"player_pos" : Vector2(500, 100),
+		"mobs" : [
+			[
+				Vector2(600, 600),
+				Vector2(700, 700),
+				Vector2(800, 600),
+				Vector2(600, 600)
+			]
+		],
+		"obstacles" : [
+			{
+				"pos" : Vector2(300, 300),
+				"scale" : Vector2(3, 2)
+			},
+		],
+		"goals" : [
+			{
+				"pos" : Vector2(500, 500),
+				"choices" : [
+					"aaa",
+					"bbb",
+					"ccc"
+				]
+			}
+		]
 	}
 ]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	start(0)
+	start(get_node("/root/Global").level)
 	pass # Replace with function body.
 
 
@@ -86,5 +113,6 @@ func start(level):
 
 
 func _on_Shutdown_pressed():
+	get_node("/root/Global").level += 1
 	get_tree().change_scene("res://scenes/Room.tscn")
 	pass # Replace with function body.

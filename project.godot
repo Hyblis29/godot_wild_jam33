@@ -14,6 +14,10 @@ config/name="Godot Wild Jam 33"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://scenes/Global.gd"
+
 [display]
 
 window/size/width=1366

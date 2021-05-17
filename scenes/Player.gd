@@ -34,8 +34,8 @@ func _physics_process(delta):
 	# Clamping 
 	#position += velocity * delta
 	move_and_slide(velocity, Vector2(1, -1))
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	position.x = clamp(position.x, 32, screen_size.x-400)
+	position.y = clamp(position.y, 32, screen_size.y-32)
 	
 	# Flip animation sprite
 	if velocity.x != 0:
