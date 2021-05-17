@@ -59,8 +59,9 @@ func start(pos):
 
 
 func _on_Player_body_entered(body):
-	hide()  # Player disappears after being hit.
+	#hide()  # Player disappears after being hit.
 	emit_signal("hit")
+	print("outch")
 	# Safely disable collision shape
-	$CollisionShape2D.set_deferred("disabled", true)
+	#$CollisionShape2D.set_deferred("disabled", true)
 	pass  # Replace with function body.

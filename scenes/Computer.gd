@@ -12,15 +12,14 @@ var datas = [
 		"player_pos" : Vector2(100, 100),
 		"mobs" : [
 			[
-				Vector2(10, 10),
-				Vector2(20, 20)
+				Vector2(600, 600),
+				Vector2(700, 700)
 			]
 		],
 		"obstacles" : [
 			{
 				"pos" : Vector2(300, 300),
-				"height" : 40,
-				"width" : 20
+				"scale" : Vector2(3, 2)
 			}
 		],
 		"goals" : [
@@ -39,6 +38,7 @@ var datas = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start(0)
 	pass # Replace with function body.
 
 
@@ -49,18 +49,18 @@ func _ready():
 
 func start(level):
 	# Player initialization
-	$Player.position = datas[level]["player_pos"]
+	$Player.start(datas[level]["player_pos"])
 	
 	# Mobs initialization
 	for mob_datas in datas[level]["mobs"]:
 		var mob = Mob.instance()
-		mob.init(mob_datas)
+		mob.init(mob_datas[0])
 		add_child(mob)
 		
 	# Obstacles initialization
 	for obs_datas in datas[level]["obstacles"]:
 		var obstacle = Obstacle.instance()
-		obstacle.init(obs_datas["pos"], obs_datas["height"], obs_datas["width"])
+		obstacle.init(obs_datas["pos"], obs_datas["scale"])
 		add_child(obstacle)
 		
 	# Goals initialization
