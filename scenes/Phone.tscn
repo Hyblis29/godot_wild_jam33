@@ -23,4 +23,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+margin_left = 530.0
+margin_top = 189.0
+margin_right = 776.0
+margin_bottom = 495.0
+
 [connection signal="pressed" from="SendButton" to="." method="_on_SendButton_pressed"]
