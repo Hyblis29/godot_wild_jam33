@@ -2,7 +2,6 @@ extends Area2D
 
 
 # Variables
-var choices = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +14,18 @@ func _ready():
 #	pass
 
 
-func init(pos, cho):
+func init(pos, choices):
 	position = pos
-	choices = cho
+	for item in choices:
+		$OptionButton.add_item(item["word"], item["score"])
+	pass
+
+
+func _on_Goal_body_entered(body):
+	$OptionButton.disabled = false
+	pass
+
+
+func _on_Goal_body_exited(body):
+	$OptionButton.disabled = true
 	pass

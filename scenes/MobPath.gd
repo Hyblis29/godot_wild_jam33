@@ -6,7 +6,7 @@ export var speed = 50
 
 
 # Signals
-signal touched
+signal mob_touched
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,6 +27,6 @@ func init(points):
 
 
 func _on_Mob_body_entered(body):
-	emit_signal("touched")
+	emit_signal("mob_touched")
 	print("outch a mob!")
-	pass # Replace with function body.
+	pass
