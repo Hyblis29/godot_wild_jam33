@@ -3,7 +3,15 @@ extends Node
 
 # Variables
 var level = 0
-var datas = [
+var phone = true # indicate if the player must see the phone or the computer
+var phone_datas = [
+	"level 0 blablablablablablbalbablbbal",
+	"level 1 blablablablablablbalbablbbal",
+	"level 2 blablablablablablbalbablbbal",
+	"level 3 blablablablablablbalbablbbal",
+	"level 4 blablablablablablbalbablbbal"
+]
+var computer_datas = [
 	{ 
 		"player_pos" : Vector2(100, 100),
 		"mobs" : [
@@ -38,11 +46,11 @@ var datas = [
 				"choices" : [
 					{
 					"word" : "aaa",
-					"score" : 2 # needs to be unique in choices
+					"score" : 0 # needs to be unique in choices
 					},
 					{
 					"word" : "bbb",
-					"score" : 0
+					"score" : 2
 					},
 					{
 					"word" : "ccc",
@@ -55,15 +63,15 @@ var datas = [
 				"choices" : [
 					{
 					"word" : "dddddddddd",
-					"score" : 1
+					"score" : 4
 					},
 					{
 					"word" : "eeeeeeeeee",
-					"score" : 10
+					"score" : 5
 					},
 					{
 					"word" : "iiiiiiiiii",
-					"score" : 0
+					"score" : 6
 					},
 				]
 			}
@@ -91,15 +99,15 @@ var datas = [
 				"choices" : [
 					{
 					"word" : "aaa",
-					"score" : 2
+					"score" : 10
 					},
 					{
 					"word" : "bbb",
-					"score" : 0
+					"score" : 11
 					},
 					{
 					"word" : "ccc",
-					"score" : 3
+					"score" : 12
 					},
 				]
 			}
@@ -108,11 +116,18 @@ var datas = [
 ]
 var player_score = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+# Methods
+func get_phone_datas():
+	return phone_datas[level]
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func get_computer_datas():
+	return computer_datas[level]
+
+
+func init():
+	level = 0
+	phone = true
+	player_score = 0
+	pass

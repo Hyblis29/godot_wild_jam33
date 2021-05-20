@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/PausePopup.gd" type="Script" id=1]
+
+[node name="PausePopup" type="Popup"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -31.0
+margin_right = 74.0
+margin_bottom = 31.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 148.0
+margin_bottom = 14.0
+text = "PAUSE"
+align = 1
+
+[node name="Unpause" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 148.0
+margin_bottom = 38.0
+text = "Return to game"
+
+[node name="ReturnMainMenu" type="Button" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 148.0
+margin_bottom = 62.0
+text = "Return to main menu"
+
+[connection signal="pressed" from="VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
+[connection signal="pressed" from="VBoxContainer/ReturnMainMenu" to="." method="_on_ReturnMainMenu_pressed"]

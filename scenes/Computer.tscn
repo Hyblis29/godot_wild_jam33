@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/MobPath.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/PausePopup.tscn" type="PackedScene" id=7]
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,52 +16,20 @@ Goal = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 973.0
-margin_top = 2.0
-margin_right = 1362.0
-margin_bottom = 766.0
-custom_constants/margin_right = 20
-custom_constants/margin_top = 20
-custom_constants/margin_left = 20
-custom_constants/margin_bottom = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Tween" type="Tween" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 369.0
-margin_bottom = 744.0
-size_flags_vertical = 3
-custom_constants/separation = 20
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 349.0
-margin_bottom = 640.0
-size_flags_vertical = 3
-custom_constants/separation = 20
-
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
-margin_right = 349.0
-margin_bottom = 20.0
-
-[node name="Shutdown" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-margin_left = 285.0
-margin_top = 660.0
-margin_right = 349.0
-margin_bottom = 724.0
+[node name="Shutdown" type="TextureButton" parent="."]
+margin_left = 1278.0
+margin_top = 682.0
+margin_right = 1342.0
+margin_bottom = 746.0
 size_flags_horizontal = 8
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="."]
+[node name="PausePopup" parent="." instance=ExtResource( 7 )]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Shutdown" to="." method="_on_Shutdown_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]

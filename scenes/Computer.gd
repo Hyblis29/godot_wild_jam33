@@ -12,18 +12,12 @@ var level_datas
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var level = get_node("/root/Global").level
-	level_datas = get_node("/root/Global").datas[level]
-	start(level)
-	pass # Replace with function body.
+	level_datas = get_node("/root/Global").get_computer_datas()
+	start()
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func start(level):
+func start():
 	# Player initialization
 	$Player.start(level_datas["player_pos"])
 	
@@ -54,17 +48,22 @@ func start(level):
 func _on_Shutdown_pressed():
 	# increment level
 	get_node("/root/Global").level += 1
+	
 	# add level score to global score
 	for goal in get_tree().get_nodes_in_group("goals"):
 		var point = goal.get_node("OptionButton").get_selected_id()
 		get_node("/root/Global").player_score += point
 	print(get_node("/root/Global").player_score)
 	
+	# next, the player must see the phone
+	get_node("/root/Global").phone = true
+	
 	get_tree().change_scene("res://scenes/Room.tscn")
 	pass
 
 
 func _on_mob_touched():
+	# vanishing animation of player
 	var tween = get_node("Tween")
 	var start_color = Color(1.0, 1.0, 1.0, 1.0)
 	var end_color = Color(1.0, 1.0, 1.0, 0.0)
