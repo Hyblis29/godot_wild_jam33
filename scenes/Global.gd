@@ -2,6 +2,16 @@ extends Node
 
 
 # Variables
+const goals = "goals"
+const choices = "choices"
+const score = "score"
+const word = "word"
+const pos = "pos"
+const mobs = "mobs"
+const obstacles = "obstacles"
+const scale = "scale"
+const player_pos = "player_pos"
+
 var level = 0
 var phone = true # indicate if the player must see the phone or the computer
 var phone_datas = [
@@ -12,6 +22,8 @@ var phone_datas = [
 	"level 4 blablablablablablbalbablbbal"
 ]
 var computer_datas = [
+	{goals:[{choices:[{score:2, word:"word2"}, {score:9, word:"word9"}, {score:0, word:"word0"}], pos:Vector2(539.198975, 560.580994)}, {choices:[{score:3, word:"Word3"}, {score:0, word:"Word0"}, {score:7, word:"Word7"}, {score:1, word:"Word1"}], pos:Vector2(972.176025, 435.855011)}], mobs:[[Vector2(751, 472), Vector2(316.98999, 477.447998), Vector2(320.765015, 692.651978), Vector2(762.499023, 703.978027), Vector2(751, 472)], [Vector2(794, 472), Vector2(802.140991, 311.325989), Vector2(1134.390015, 309.438995), Vector2(1153.26001, 498.213989), Vector2(794, 472)]], obstacles:[{pos:Vector2(462.363007, 351.890991), scale:Vector2(2, 2)}, {pos:Vector2(177.274994, 524.726013), scale:Vector2(1.64, 5.24)}, {pos:Vector2(879.304016, 214.692993), scale:Vector2(5.32, 1.36)}], player_pos:Vector2(262.346008, 162.296005)},
+	{goals:[{choices:[{score:2, word:"Word"}], pos:Vector2(500, 500)}], mobs:[[Vector2(200, 200), Vector2(300, 300), Vector2(200, 200)]], obstacles:[{pos:Vector2(400, 400), scale:Vector2(2, 2)}], player_pos:Vector2(100, 100)},
 	{ 
 		"player_pos" : Vector2(100, 100),
 		"mobs" : [
@@ -72,42 +84,6 @@ var computer_datas = [
 					{
 					"word" : "iiiiiiiiii",
 					"score" : 6
-					},
-				]
-			}
-		]
-	},
-	{ 
-		"player_pos" : Vector2(500, 100),
-		"mobs" : [
-			[
-				Vector2(600, 600),
-				Vector2(700, 700),
-				Vector2(800, 600),
-				Vector2(600, 600)
-			]
-		],
-		"obstacles" : [
-			{
-				"pos" : Vector2(300, 300),
-				"scale" : Vector2(3, 2)
-			},
-		],
-		"goals" : [
-			{
-				"pos" : Vector2(500, 500),
-				"choices" : [
-					{
-					"word" : "aaa",
-					"score" : 10
-					},
-					{
-					"word" : "bbb",
-					"score" : 11
-					},
-					{
-					"word" : "ccc",
-					"score" : 12
 					},
 				]
 			}

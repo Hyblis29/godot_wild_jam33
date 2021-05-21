@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/LevelEditor.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/MobPath.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="LevelEditor" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 683, 384 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 262.346, 165.292 )
+
+[node name="Goals" type="Node" parent="."]
+
+[node name="Goal0" parent="Goals" instance=ExtResource( 6 )]
+position = Vector2( 539.199, 560.581 )
+
+[node name="Labels" type="Node" parent="Goals/Goal0"]
+
+[node name="Label0" type="Label" parent="Goals/Goal0/Labels"]
+text = "word2:2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Goals/Goal0/Labels"]
+text = "word9:9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Goals/Goal0/Labels"]
+text = "word0:0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal1" parent="Goals" instance=ExtResource( 6 )]
+position = Vector2( 972.176, 435.855 )
+
+[node name="Labels" type="Node" parent="Goals/Goal1"]
+
+[node name="Label0" type="Label" parent="Goals/Goal1/Labels"]
+text = "Word3:3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Goals/Goal1/Labels"]
+text = "Word0:0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Goals/Goal1/Labels"]
+text = "Word7:7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Goals/Goal1/Labels"]
+text = "Word1:1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle0" parent="Obstacles" instance=ExtResource( 5 )]
+position = Vector2( 462.363, 351.891 )
+scale = Vector2( 2, 2 )
+
+[node name="Obstacle1" parent="Obstacles" instance=ExtResource( 5 )]
+position = Vector2( 177.275, 524.726 )
+scale = Vector2( 1.64, 5.24 )
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource( 5 )]
+position = Vector2( 879.304, 214.693 )
+scale = Vector2( 5.32, 1.36 )
+
+[node name="Mobs" type="Node" parent="."]
+
+[node name="MobPath0" parent="Mobs" instance=ExtResource( 4 )]
+position = Vector2( 751, 472 )
+curve = SubResource( 1 )
+
+[node name="Positions" type="Node" parent="Mobs/MobPath0"]
+
+[node name="Position0" type="Position2D" parent="Mobs/MobPath0/Positions"]
+position = Vector2( 316.99, 477.448 )
+
+[node name="Position1" type="Position2D" parent="Mobs/MobPath0/Positions"]
+position = Vector2( 320.765, 692.652 )
+
+[node name="Position2" type="Position2D" parent="Mobs/MobPath0/Positions"]
+position = Vector2( 762.499, 703.978 )
+
+[node name="MobPath1" parent="Mobs" instance=ExtResource( 4 )]
+position = Vector2( 794, 472 )
+curve = SubResource( 1 )
+
+[node name="Positions" type="Node" parent="Mobs/MobPath1"]
+
+[node name="Position0" type="Position2D" parent="Mobs/MobPath1/Positions"]
+position = Vector2( 802.141, 311.326 )
+
+[node name="Position1" type="Position2D" parent="Mobs/MobPath1/Positions"]
+position = Vector2( 1134.39, 309.439 )
+
+[node name="Position2" type="Position2D" parent="Mobs/MobPath1/Positions"]
+position = Vector2( 1153.26, 498.214 )

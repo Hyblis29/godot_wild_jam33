@@ -61,6 +61,9 @@ extents = Vector2( 10.994, 10.9801 )
 
 [node name="MobPath" type="Path2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 cubic_interp = false
@@ -68,13 +71,10 @@ cubic_interp = false
 [node name="Mob" type="Area2D" parent="PathFollow2D"]
 modulate = Color( 1, 0, 0, 1 )
 gravity = 0.0
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PathFollow2D/Mob"]
 frames = SubResource( 11 )
-frame = 7
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Mob"]

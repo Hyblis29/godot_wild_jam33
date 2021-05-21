@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,12 +7,17 @@
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/PausePopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/background.png" type="Texture" id=8]
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
 MobPath = ExtResource( 4 )
 Obstacle = ExtResource( 5 )
 Goal = ExtResource( 6 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 683, 384 )
+texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
