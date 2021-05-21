@@ -3,7 +3,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.text = get_node("/root/Global").get_phone_datas()
+	var end = get_node("/root/Global").end()
+	if end == null:
+		$Label.text = get_node("/root/Global").get_phone_datas()
+		$SendButton.show()
+	else:
+		$Label.text = end
+		$SendButton.hide()
 	pass
 
 
