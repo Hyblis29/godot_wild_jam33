@@ -7,6 +7,7 @@
 extents = Vector2( 102.88, 23.696 )
 
 [node name="Goal" type="Area2D"]
+modulate = Color( 0.537255, 0.94902, 0.94902, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

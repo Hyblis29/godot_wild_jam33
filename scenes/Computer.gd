@@ -86,7 +86,6 @@ func _on_mob_touched():
 	var end_color = Color(1.0, 1.0, 1.0, 0.0)
 	tween.interpolate_property($Player, "modulate", start_color, end_color, 1.0)
 	tween.start()
-	print("aaaaaarrr I die...")
 	pass
 
 

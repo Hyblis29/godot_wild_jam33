@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/sprites/computer_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/computer_1.png" type="Texture" id=2]
@@ -12,10 +12,16 @@
 [ext_resource path="res://assets/sprites/Lobby_background.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/phone_1.png" type="Texture" id=11]
 [ext_resource path="res://assets/fonts/DOS26.tres" type="DynamicFont" id=12]
+[ext_resource path="res://assets/sprites/character.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/corp.png" type="Texture" id=14]
 
 [node name="Room" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.890869
+margin_top = 0.44545
+margin_right = 0.890869
+margin_bottom = 0.445435
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -96,6 +102,18 @@ one_shot = true
 autostart = true
 
 [node name="PausePopup" parent="." instance=ExtResource( 7 )]
+
+[node name="character" type="Sprite" parent="."]
+modulate = Color( 0.94, 0, 0, 1 )
+position = Vector2( 855, 297 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 13 )
+
+[node name="corp" type="Sprite" parent="."]
+modulate = Color( 0.88, 0.132, 0.8426, 1 )
+position = Vector2( 855, 252 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
 
 [connection signal="pressed" from="Phone" to="." method="_on_Phone_pressed"]
 [connection signal="pressed" from="Computer" to="." method="_on_Computer_pressed"]

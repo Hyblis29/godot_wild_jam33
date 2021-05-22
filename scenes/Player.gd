@@ -19,23 +19,19 @@ func _physics_process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
+#		$Sprite.play()
+#	else:
+#		$Sprite.stop()
 	
-	# Clamping 
-	#position += velocity * delta
+	# Clamping
 	move_and_slide(velocity, Vector2(1, -1))
 	position.x = clamp(position.x, 221, 913)
 	position.y = clamp(position.y, 168, 568)
 	
 	# Flip animation sprite
 	if velocity.x != 0:
-		#$AnimatedSprite.animation = "walk"
-		#$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = velocity.x < 0
 	elif velocity.y != 0:
-		#$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 	pass
 

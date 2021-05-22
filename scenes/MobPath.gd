@@ -23,5 +23,4 @@ func init(points):
 
 func _on_Mob_body_entered(body):
 	emit_signal("mob_touched")
-	print("outch a mob!")
 	pass
