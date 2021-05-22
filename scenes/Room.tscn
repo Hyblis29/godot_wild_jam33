@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/sprites/Lobby_background2.png" type="Texture" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/computer_2.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/computer_1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Room.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/background.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/phone_2.png" type="Texture" id=4]
 [ext_resource path="res://assets/sounds/chop.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/hurt.wav" type="AudioStream" id=6]
 [ext_resource path="res://scenes/PausePopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/phone_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/computer_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Lobby_background.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/phone_1.png" type="Texture" id=11]
 
 [node name="Room" type="Control"]
 anchor_right = 1.0
@@ -18,20 +22,23 @@ __meta__ = {
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 683, 384 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Phone" type="TextureButton" parent="."]
-modulate = Color( 0, 1, 0.623529, 1 )
-margin_left = 641.214
-margin_top = 663.541
-margin_right = 671.214
-margin_bottom = 712.541
+margin_left = 621.388
+margin_top = 673.065
+margin_right = 692.388
+margin_bottom = 698.065
 disabled = true
-texture_normal = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 11 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -39,35 +46,29 @@ __meta__ = {
 stream = ExtResource( 5 )
 
 [node name="Computer" type="TextureButton" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 38.1122
-margin_top = 428.235
-margin_right = 143.112
-margin_bottom = 501.235
+margin_left = 0.0715218
+margin_top = 417.556
+margin_right = 303.072
+margin_bottom = 603.556
 disabled = true
-texture_normal = ExtResource( 2 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 2 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="ComputerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
-[node name="Advert" type="Sprite" parent="."]
-modulate = Color( 0, 0.741176, 1, 1 )
-position = Vector2( 971.017, 226.423 )
-scale = Vector2( 6.10175, 3.59775 )
-texture = ExtResource( 2 )
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 837.551
-margin_top = 171.775
-margin_right = 1106.55
-margin_bottom = 206.775
+modulate = Color( 0.980392, 0.305882, 0.501961, 1 )
+margin_left = 895.0
+margin_top = 235.0
+margin_right = 1085.0
+margin_bottom = 270.0
 step = 1.0
 value = 100.0
 __meta__ = {
@@ -75,11 +76,11 @@ __meta__ = {
 }
 
 [node name="ProgressBar2" type="ProgressBar" parent="."]
-modulate = Color( 0.00784314, 1, 0, 1 )
-margin_left = 835.663
-margin_top = 243.51
-margin_right = 1104.66
-margin_bottom = 278.51
+modulate = Color( 0.0862745, 0.698039, 0.607843, 1 )
+margin_left = 895.0
+margin_top = 280.0
+margin_right = 1085.0
+margin_bottom = 315.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
