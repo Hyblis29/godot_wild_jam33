@@ -5,10 +5,10 @@ extends Control
 func _ready():
 	var end = get_node("/root/Global").end()
 	if end == null:
-		$Label.text = get_node("/root/Global").get_phone_datas()
+		$RichTextLabel.text = get_node("/root/Global").get_phone_datas()
 		$SendButton.show()
 	else:
-		$Label.text = end
+		$RichTextLabel.text = end
 		$SendButton.hide()
 	pass
 

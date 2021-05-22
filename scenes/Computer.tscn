@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/button_pc_2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/MobPath.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/PausePopup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/Background_computer_on.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/Background_computer_base.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/button_pc_1.png" type="Texture" id=10]
+[ext_resource path="res://Instruction.tscn" type="PackedScene" id=11]
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,31 +18,41 @@ MobPath = ExtResource( 4 )
 Obstacle = ExtResource( 5 )
 Goal = ExtResource( 6 )
 
-[node name="Background" type="Sprite" parent="."]
+[node name="BackgroundOff" type="Sprite" parent="."]
 position = Vector2( 683, 384 )
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Background2" type="Sprite" parent="."]
-visible = false
+[node name="BackgroundOn" type="Sprite" parent="."]
 position = Vector2( 683, 384 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Shutdown" type="TextureButton" parent="."]
-margin_left = 1278.0
-margin_top = 682.0
-margin_right = 1342.0
-margin_bottom = 746.0
+margin_left = 1107.31
+margin_top = 521.618
+margin_right = 1194.31
+margin_bottom = 608.618
 size_flags_horizontal = 8
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="PausePopup" parent="." instance=ExtResource( 7 )]
+
+[node name="Instruction" parent="." instance=ExtResource( 11 )]
+text = ""
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]

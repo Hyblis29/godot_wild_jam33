@@ -8,18 +8,27 @@ export (PackedScene) var Goal
 
 # Variables
 var level_datas
+var off
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	off = true
+	$BackgroundOn.hide()
+	$BackgroundOff.show()
+	$Player.hide()
+	
 	level_datas = get_node("/root/Global").get_computer_datas()
-	start()
 	pass
 
 
 func start():
 	# Player initialization
 	$Player.start(level_datas["player_pos"])
+	$Player.show()
+	
+	# Instruction initialisation
+	$Instruction.text = level_datas["instruction"]
 	
 	# Mobs initialization
 	for mob_datas in level_datas["mobs"]:
@@ -46,19 +55,27 @@ func start():
 
 
 func _on_Shutdown_pressed():
-	# increment level
-	get_node("/root/Global").level += 1
-	
-	# add level score to global score
-	for goal in get_tree().get_nodes_in_group("goals"):
-		var point = goal.get_node("OptionButton").get_selected_id()
-		get_node("/root/Global").player_score += point
-	print(get_node("/root/Global").player_score)
-	
-	# next, the player must see the phone
-	get_node("/root/Global").phone = true
-	
-	get_tree().change_scene("res://scenes/Room.tscn")
+	# first time the button is pressed
+	if off:
+		off = false
+		$BackgroundOn.show()
+		$BackgroundOff.hide()
+		start()
+	# second time the button is pressed
+	else :
+		# increment level
+		get_node("/root/Global").level += 1
+		
+		# add level score to global score
+		for goal in get_tree().get_nodes_in_group("goals"):
+			var point = goal.get_node("OptionButton").get_selected_id()
+			get_node("/root/Global").player_score += point
+		print(get_node("/root/Global").player_score)
+		
+		# next, the player must see the phone
+		get_node("/root/Global").phone = true
+		
+		get_tree().change_scene("res://scenes/Room.tscn")
 	pass
 
 

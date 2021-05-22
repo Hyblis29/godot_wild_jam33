@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/PausePopup.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/DOS26.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 3 )
 
 [node name="PausePopup" type="Popup"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -16,31 +23,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -74.0
-margin_top = -31.0
-margin_right = 74.0
-margin_bottom = 31.0
+margin_left = -148.5
+margin_top = -50.5
+margin_right = 148.5
+margin_bottom = 50.5
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 148.0
-margin_bottom = 14.0
+margin_right = 297.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
 text = "PAUSE"
 align = 1
 
 [node name="Unpause" type="Button" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 148.0
-margin_bottom = 38.0
+margin_top = 64.0
+margin_right = 297.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 2 )
 text = "Return to game"
 
 [node name="ReturnMainMenu" type="Button" parent="VBoxContainer"]
-margin_top = 42.0
-margin_right = 148.0
-margin_bottom = 62.0
+margin_top = 101.0
+margin_right = 297.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 2 )
 text = "Return to main menu"
 
 [connection signal="pressed" from="VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]

@@ -3,14 +3,6 @@ extends KinematicBody2D
 
 # Variables
 export var speed = 400
-var screen_size
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	#hide()
-	screen_size = get_viewport_rect().size
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,8 +26,8 @@ func _physics_process(delta):
 	# Clamping 
 	#position += velocity * delta
 	move_and_slide(velocity, Vector2(1, -1))
-	position.x = clamp(position.x, 100, screen_size.x-100)
-	position.y = clamp(position.y, 100, screen_size.y-100)
+	position.x = clamp(position.x, 221, 913)
+	position.y = clamp(position.y, 168, 568)
 	
 	# Flip animation sprite
 	if velocity.x != 0:

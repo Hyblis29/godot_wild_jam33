@@ -8,6 +8,9 @@ func _ready():
 	# player
 	level_datas["player_pos"] = $Player.position
 	
+	# instruction
+	level_datas["instruction"] = "\"" + $Instruction.text.replacen("\n", "\\n") + "\""
+	
 	# mobs
 	level_datas["mobs"] = []
 	
@@ -48,12 +51,12 @@ func _ready():
 			# Goal0/Labels/Label0
 			var label = goal_node.get_node("Labels").get_child(j).text.split(":")
 			level_datas["goals"][i]["choices"].append({
-				"word" : label[0],
+				"word" : "\"" + label[0] + "\"",
 				"score" : label[1]
 			})
 	
 	# print level datas
-	var pretty_level_datas = String(level_datas).replacen("(", "Vector2(").replacen("word:", "word:\"").replacen("}, {score", "\"}, {score").replacen("}], pos", "\"}], pos")
+	var pretty_level_datas = String(level_datas).replacen("(", "Vector2(").replacen("\"\"", "\"")
 	print(pretty_level_datas)
 	
 	# quit game
