@@ -9,7 +9,7 @@
 [ext_resource path="res://Instruction.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 8 )
 
@@ -29,20 +29,20 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 435.285, 228.281 )
+position = Vector2( 254.492, 205.577 )
 
 [node name="Goals" type="Node" parent="."]
 
 [node name="Goal0" parent="Goals" instance=ExtResource( 6 )]
-position = Vector2( 504.493, 515.196 )
+position = Vector2( 406.534, 556.15 )
 
 [node name="Key" type="Label" parent="Goals/Goal0"]
 margin_left = -295.344
 margin_top = -16.4999
 margin_right = 149.656
 margin_bottom = 16.5001
-custom_fonts/font = SubResource( 3 )
-text = "      {Tonii:         }"
+custom_fonts/font = SubResource( 1 )
+text = "    {Country:         }"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,19 +51,54 @@ __meta__ = {
 [node name="Labels" type="Node" parent="Goals/Goal0"]
 
 [node name="Label0" type="Label" parent="Goals/Goal0/Labels"]
-text = "word2:2"
+text = "Unknown:1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label1" type="Label" parent="Goals/Goal0/Labels"]
-text = "word9:9"
+text = "Major:8"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="Goals/Goal0/Labels"]
-text = "word0:0"
+text = "Minor:5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal1" parent="Goals" instance=ExtResource( 6 )]
+position = Vector2( 744.537, 553.468 )
+
+[node name="Key" type="Label" parent="Goals/Goal1"]
+margin_left = -295.344
+margin_top = -16.4999
+margin_right = 149.656
+margin_bottom = 16.5001
+custom_fonts/font = SubResource( 1 )
+text = "     {Source:         }"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" type="Node" parent="Goals/Goal1"]
+
+[node name="Label0" type="Label" parent="Goals/Goal1/Labels"]
+text = "Rumors:1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Goals/Goal1/Labels"]
+text = "Embassy:6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Goals/Goal1/Labels"]
+text = "Secret:3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,47 +106,75 @@ __meta__ = {
 [node name="Obstacles" type="Node" parent="."]
 
 [node name="Obstacle0" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 506.408, 361.57 )
-scale = Vector2( 1, 2 )
+position = Vector2( 790, 392 )
+scale = Vector2( 1, 4 )
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource( 5 )]
+position = Vector2( 534, 551 )
 
 [node name="Obstacle1" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 274.718, 407.26 )
-scale = Vector2( 1.64, 5.24 )
+position = Vector2( 431, 331 )
+scale = Vector2( 7, 2 )
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 744.485, 209.354 )
-scale = Vector2( 5.32, 1.36 )
+position = Vector2( 630.031, 487.604 )
+scale = Vector2( 4, 1 )
 
 [node name="Mobs" type="Node" parent="."]
 
 [node name="MobPath0" parent="Mobs" instance=ExtResource( 4 )]
-position = Vector2( 623, 455 )
+position = Vector2( 380, 430 )
 curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath0"]
 
 [node name="Position0" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 377.044, 457.76 )
+position = Vector2( 700, 430 )
 
 [node name="Position1" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 358.141, 560.503 )
+position = Vector2( 700, 250 )
 
 [node name="Position2" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 657.047, 562.485 )
+position = Vector2( 700, 430 )
 
 [node name="MobPath1" parent="Mobs" instance=ExtResource( 4 )]
-position = Vector2( 659, 458 )
+position = Vector2( 875, 550 )
 curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath1"]
 
 [node name="Position0" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 631.281, 312.661 )
+position = Vector2( 875, 200 )
 
 [node name="Position1" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 894.119, 297.425 )
+position = Vector2( 750, 180 )
 
 [node name="Position2" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 899.64, 448.825 )
+position = Vector2( 750, 230 )
+
+[node name="Position3" type="Position2D" parent="Mobs/MobPath1/Positions"]
+position = Vector2( 750, 550 )
+
+[node name="MobPath2" parent="Mobs" instance=ExtResource( 4 )]
+position = Vector2( 250, 500 )
+curve = SubResource( 2 )
+
+[node name="Positions" type="Node" parent="Mobs/MobPath2"]
+
+[node name="Position0" type="Position2D" parent="Mobs/MobPath2/Positions"]
+position = Vector2( 460, 500 )
+
+[node name="Position1" type="Position2D" parent="Mobs/MobPath2/Positions"]
+position = Vector2( 350, 500 )
 
 [node name="Instruction" parent="." instance=ExtResource( 7 )]
+margin_top = 144.0
+margin_bottom = 487.0
+text = "Objective:
+Embelish rumors on foreign support
+
+
+
+
+-Access and modify data
+-Avoid bots"
