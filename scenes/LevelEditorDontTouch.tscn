@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/LevelEditor.gd" type="Script" id=1]
 [ext_resource path="res://Instruction.tscn" type="PackedScene" id=2]
@@ -7,8 +7,13 @@
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/Background_computer_on.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 8 )
+
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array(  )
 }
@@ -28,6 +33,18 @@ position = Vector2( 100, 100 )
 [node name="Goal0" parent="Goals" instance=ExtResource( 6 )]
 position = Vector2( 200, 200 )
 
+[node name="Key" type="Label" parent="Goals/Goal0"]
+margin_left = -295.344
+margin_top = -16.4999
+margin_right = 149.656
+margin_bottom = 16.5001
+custom_fonts/font = SubResource( 1 )
+text = "      {Tonii:         }"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Labels" type="Node" parent="Goals/Goal0"]
 
 [node name="Label0" type="Label" parent="Goals/Goal0/Labels"]
@@ -45,7 +62,7 @@ position = Vector2( 300, 300 )
 
 [node name="MobPath0" parent="Mobs" instance=ExtResource( 4 )]
 position = Vector2( 400, 400 )
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath0"]
 

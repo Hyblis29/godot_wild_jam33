@@ -33,6 +33,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.815686, 0.545098, 0.290196, 1 )
 
 [node name="Tween" type="Tween" parent="."]
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://assets/sprites/wallpaper.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/Credits.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/Background_computer_on.png" type="Texture" id=4]
@@ -67,5 +68,10 @@ margin_bottom = 33.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
 text = " Main menu "
+
+[node name="wallpaper" type="Sprite" parent="."]
+position = Vector2( 1100.48, 439.921 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 1 )
 
 [connection signal="pressed" from="HBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
