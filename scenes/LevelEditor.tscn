@@ -29,12 +29,12 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 254.492, 205.577 )
+position = Vector2( 244.109, 369.811 )
 
 [node name="Goals" type="Node" parent="."]
 
 [node name="Goal0" parent="Goals" instance=ExtResource( 6 )]
-position = Vector2( 406.534, 556.15 )
+position = Vector2( 816.175, 188.039 )
 
 [node name="Key" type="Label" parent="Goals/Goal0"]
 margin_left = -295.344
@@ -42,7 +42,7 @@ margin_top = -16.4999
 margin_right = 149.656
 margin_bottom = 16.5001
 custom_fonts/font = SubResource( 1 )
-text = "    {Country:         }"
+text = "       {bias:         }"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,54 +51,19 @@ __meta__ = {
 [node name="Labels" type="Node" parent="Goals/Goal0"]
 
 [node name="Label0" type="Label" parent="Goals/Goal0/Labels"]
-text = "Unknown:1"
+text = "Huge:1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label1" type="Label" parent="Goals/Goal0/Labels"]
-text = "Major:8"
+text = "Usual:5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="Goals/Goal0/Labels"]
-text = "Minor:5"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Goal1" parent="Goals" instance=ExtResource( 6 )]
-position = Vector2( 744.537, 553.468 )
-
-[node name="Key" type="Label" parent="Goals/Goal1"]
-margin_left = -295.344
-margin_top = -16.4999
-margin_right = 149.656
-margin_bottom = 16.5001
-custom_fonts/font = SubResource( 1 )
-text = "     {Source:         }"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Labels" type="Node" parent="Goals/Goal1"]
-
-[node name="Label0" type="Label" parent="Goals/Goal1/Labels"]
-text = "Rumors:1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label1" type="Label" parent="Goals/Goal1/Labels"]
-text = "Embassy:6"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Goals/Goal1/Labels"]
-text = "Secret:3"
+text = "Neutral:15"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,72 +71,90 @@ __meta__ = {
 [node name="Obstacles" type="Node" parent="."]
 
 [node name="Obstacle0" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 790, 392 )
+position = Vector2( 628.598, 281.567 )
 scale = Vector2( 1, 4 )
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 534, 551 )
+position = Vector2( 785.071, 413.194 )
 
 [node name="Obstacle1" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 431, 331 )
-scale = Vector2( 7, 2 )
+position = Vector2( 407.403, 371.622 )
+scale = Vector2( 1, 5 )
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource( 5 )]
-position = Vector2( 630.031, 487.604 )
+position = Vector2( 803.704, 550.844 )
 scale = Vector2( 4, 1 )
 
 [node name="Mobs" type="Node" parent="."]
 
 [node name="MobPath0" parent="Mobs" instance=ExtResource( 4 )]
-position = Vector2( 380, 430 )
+position = Vector2( 300, 180 )
 curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath0"]
 
 [node name="Position0" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 700, 430 )
-
-[node name="Position1" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 700, 250 )
-
-[node name="Position2" type="Position2D" parent="Mobs/MobPath0/Positions"]
-position = Vector2( 700, 430 )
+position = Vector2( 500, 180 )
 
 [node name="MobPath1" parent="Mobs" instance=ExtResource( 4 )]
-position = Vector2( 875, 550 )
+position = Vector2( 300, 560 )
 curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath1"]
 
 [node name="Position0" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 875, 200 )
-
-[node name="Position1" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 750, 180 )
-
-[node name="Position2" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 750, 230 )
-
-[node name="Position3" type="Position2D" parent="Mobs/MobPath1/Positions"]
-position = Vector2( 877, 200 )
+position = Vector2( 500, 560 )
 
 [node name="MobPath2" parent="Mobs" instance=ExtResource( 4 )]
-position = Vector2( 250, 500 )
+position = Vector2( 710, 350 )
 curve = SubResource( 2 )
 
 [node name="Positions" type="Node" parent="Mobs/MobPath2"]
 
-[node name="Position0" type="Position2D" parent="Mobs/MobPath2/Positions"]
-position = Vector2( 460, 500 )
-
 [node name="Position1" type="Position2D" parent="Mobs/MobPath2/Positions"]
-position = Vector2( 350, 500 )
+position = Vector2( 710, 480 )
+
+[node name="Position2" type="Position2D" parent="Mobs/MobPath2/Positions"]
+position = Vector2( 850, 480 )
+
+[node name="Position3" type="Position2D" parent="Mobs/MobPath2/Positions"]
+position = Vector2( 850, 350 )
+
+[node name="MobPath3" parent="Mobs" instance=ExtResource( 4 )]
+position = Vector2( 850, 350 )
+curve = SubResource( 2 )
+
+[node name="Positions" type="Node" parent="Mobs/MobPath3"]
+
+[node name="Position2" type="Position2D" parent="Mobs/MobPath3/Positions"]
+position = Vector2( 850, 480 )
+
+[node name="Position1" type="Position2D" parent="Mobs/MobPath3/Positions"]
+position = Vector2( 710, 480 )
+
+[node name="Position0" type="Position2D" parent="Mobs/MobPath3/Positions"]
+position = Vector2( 710, 350 )
+
+[node name="MobPath4" parent="Mobs" instance=ExtResource( 4 )]
+position = Vector2( 900, 480 )
+curve = SubResource( 2 )
+
+[node name="Positions" type="Node" parent="Mobs/MobPath4"]
+
+[node name="Position2" type="Position2D" parent="Mobs/MobPath4/Positions"]
+position = Vector2( 900, 280 )
+
+[node name="Position1" type="Position2D" parent="Mobs/MobPath4/Positions"]
+position = Vector2( 710, 280 )
+
+[node name="Position0" type="Position2D" parent="Mobs/MobPath4/Positions"]
+position = Vector2( 900, 280 )
 
 [node name="Instruction" parent="." instance=ExtResource( 7 )]
 margin_top = 144.0
 margin_bottom = 487.0
 text = "Objective:
-Embelish rumors on foreign support
+Show the debate as it is: propaganda
 
 
 
