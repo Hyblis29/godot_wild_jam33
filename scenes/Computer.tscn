@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/button_pc_2.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/sprites/Background_computer_base.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/button_pc_1.png" type="Texture" id=10]
 [ext_resource path="res://Instruction.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sounds/computer_on.wav" type="AudioStream" id=12]
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
@@ -54,6 +55,9 @@ __meta__ = {
 
 [node name="Instruction" parent="." instance=ExtResource( 11 )]
 text = ""
+
+[node name="ComputerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Shutdown" to="." method="_on_Shutdown_pressed"]

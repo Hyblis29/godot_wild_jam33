@@ -60,6 +60,7 @@ func _on_Shutdown_pressed():
 		off = false
 		$BackgroundOn.show()
 		$BackgroundOff.hide()
+		$ComputerSound.play()
 		start()
 	# second time the button is pressed
 	else :

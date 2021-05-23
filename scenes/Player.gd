@@ -29,10 +29,10 @@ func _physics_process(delta):
 	position.y = clamp(position.y, 168, 568)
 	
 	# Flip animation sprite
-	if velocity.x != 0:
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite.flip_v = velocity.y > 0
+#	if velocity.x != 0:
+#		$AnimatedSprite.flip_h = velocity.x < 0
+#	elif velocity.y != 0:
+#		$AnimatedSprite.flip_v = velocity.y > 0
 	pass
 
 

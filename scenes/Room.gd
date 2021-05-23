@@ -28,5 +28,4 @@ func _on_Timer_timeout():
 	else:
 		$Phone.disabled = true
 		$Computer.disabled = false
-		$ComputerSound.play()
 	pass
