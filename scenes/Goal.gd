@@ -1,8 +1,9 @@
 extends Area2D
 
 
-func init(pos, choices):
+func init(pos, choices, key):
 	position = pos
+	$Label.text = key
 	for item in choices:
 		$OptionButton.add_item(item["word"], item["score"])
 	pass

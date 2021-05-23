@@ -1,13 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Goal.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/DOS26.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 102.88, 23.696 )
+extents = Vector2( 102.88, 19.8298 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
 
 [node name="Goal" type="Area2D"]
 modulate = Color( 0.537255, 0.94902, 0.94902, 1 )
+position = Vector2( 5, 0 )
+scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -18,11 +25,22 @@ shape = SubResource( 1 )
 
 [node name="OptionButton" type="OptionButton" parent="."]
 margin_left = -100.0
-margin_top = -20.0
+margin_top = -16.5
 margin_right = 100.0
-margin_bottom = 20.0
+margin_bottom = 16.5
 custom_fonts/font = ExtResource( 2 )
 disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -321.0
+margin_top = -16.0
+margin_right = 124.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

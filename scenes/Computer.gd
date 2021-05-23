@@ -49,7 +49,7 @@ func start():
 	for goa_datas in level_datas["goals"]:
 		var goal = Goal.instance()
 		goal.add_to_group("goals")
-		goal.init(goa_datas["pos"], goa_datas["choices"])
+		goal.init(goa_datas["pos"], goa_datas["choices"], goa_datas["key"])
 		add_child(goal)
 	pass
 
@@ -82,10 +82,11 @@ func _on_Shutdown_pressed():
 func _on_mob_touched():
 	# vanishing animation of player
 	var tween = get_node("Tween")
-	var start_color = Color(1.0, 1.0, 1.0, 1.0)
-	var end_color = Color(1.0, 1.0, 1.0, 0.0)
-	tween.interpolate_property($Player, "modulate", start_color, end_color, 1.0)
+	var start_color = Color(1.0, 0.0, 0.0, 1.0)
+	var end_color = Color(1.0, 0.0, 0.0, 0.0)
+	tween.interpolate_property($Player, "modulate", start_color, end_color, 1.0,  9, 0)  # 9:trans_bounce, 0:ease_in
 	tween.start()
+	$Player.get_node("AudioStreamPlayer").play()
 	pass
 
 

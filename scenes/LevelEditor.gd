@@ -44,7 +44,8 @@ func _ready():
 		var goal_node = $Goals.get_child(i)  # Goal0
 		level_datas["goals"].append({
 			"pos" : goal_node.position,
-			"choices" : []
+			"choices" : [],
+			"key" : "\"" + goal_node.get_node("Key").text + "\""
 		})
 		
 		for j in range (goal_node.get_node("Labels").get_child_count()):
