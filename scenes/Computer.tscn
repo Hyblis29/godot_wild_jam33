@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Computer.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/button_pc_2.png" type="Texture" id=2]
@@ -12,6 +12,14 @@
 [ext_resource path="res://assets/sprites/button_pc_1.png" type="Texture" id=10]
 [ext_resource path="res://Instruction.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/sounds/computer_on.wav" type="AudioStream" id=12]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 2
+fps = 0.3
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
 
 [node name="Computer" type="Node2D"]
 script = ExtResource( 1 )
@@ -44,7 +52,7 @@ margin_top = 521.618
 margin_right = 1194.31
 margin_bottom = 608.618
 size_flags_horizontal = 8
-texture_normal = ExtResource( 10 )
+texture_normal = SubResource( 1 )
 texture_hover = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true,
