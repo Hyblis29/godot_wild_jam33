@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/sprites/character.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/sounds/hurt.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/dead.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -30,3 +30,4 @@ shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 8.0

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/chop.wav-dd5b2292d9b2ebf38b811cc4718d85e9.sample"
+path="res://.import/dead.wav-dfd0f251241745862dc2537106093acb.sample"
 
 [deps]
 
-source_file="res://assets/sounds/chop.wav"
-dest_files=[ "res://.import/chop.wav-dd5b2292d9b2ebf38b811cc4718d85e9.sample" ]
+source_file="res://assets/sounds/dead.wav"
+dest_files=[ "res://.import/dead.wav-dfd0f251241745862dc2537106093acb.sample" ]
 
 [params]
 

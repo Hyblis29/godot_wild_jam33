@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/sprites/computer_1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Room.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/phone_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/sounds/chop.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/sounds/hurt.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/computer_on.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/phone_ring.wav" type="AudioStream" id=6]
 [ext_resource path="res://scenes/PausePopup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/phone_3.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/computer_3.png" type="Texture" id=9]
@@ -18,6 +18,7 @@
 [sub_resource type="AnimatedTexture" id=1]
 flags = 4
 frames = 2
+fps = 2.0
 frame_0/texture = ExtResource( 4 )
 frame_1/texture = ExtResource( 8 )
 frame_1/delay_sec = 0.0
@@ -25,6 +26,7 @@ frame_1/delay_sec = 0.0
 [sub_resource type="AnimatedTexture" id=2]
 flags = 4
 frames = 2
+fps = 2.0
 frame_0/texture = ExtResource( 1 )
 frame_1/texture = ExtResource( 9 )
 frame_1/delay_sec = 0.0
@@ -64,7 +66,8 @@ __meta__ = {
 }
 
 [node name="PhoneSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
+volume_db = 4.0
 
 [node name="Computer" type="TextureButton" parent="."]
 margin_left = 0.0715218
@@ -82,7 +85,8 @@ __meta__ = {
 }
 
 [node name="ComputerSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
+volume_db = 4.0
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color( 0.933333, 0.47451, 0.909804, 1 )
